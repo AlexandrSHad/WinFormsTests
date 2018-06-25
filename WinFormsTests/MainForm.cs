@@ -36,7 +36,12 @@ namespace WinFormsTests
         {
             var user2 = _users.FirstOrDefault(u => u.Id == 2);
             user2.Roles = _users.FirstOrDefault(u => u.Id == 1).Roles;
-            userBindingSource.ResetBindings(false);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var currentUser = dataGridView1.CurrentRow.DataBoundItem as User;
+            currentUser.Email = "email@example.com";
         }
     }
 }
