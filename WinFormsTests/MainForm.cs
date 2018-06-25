@@ -43,5 +43,15 @@ namespace WinFormsTests
             var currentUser = dataGridView1.CurrentRow.DataBoundItem as User;
             currentUser.Email = "email@example.com";
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var currentUser = dataGridView1.CurrentRow.DataBoundItem as User;
+
+            using (var rolesForm = new UserRolesEditForm(currentUser.Roles))
+            {
+                rolesForm.ShowDialog();
+            }
+        }
     }
 }
